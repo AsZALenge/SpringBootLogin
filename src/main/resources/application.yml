@@ -1,0 +1,9 @@
+#server configserver:  port: 9000  #Spring configspring:   #config jpa MySQL5InnoDBDialect  jpa:    show-sql: true    generate-ddl: false#    hibernate:#      ddl-auto: update    properties:      hibernate:        dialect: org.hibernate.dialect.MySQL5InnoDBDialect    #config database    datasource:    url: jdbc:mysql://localhost:3306/dormitory?useSSL=false    username: root    password: 12345678    #basic username and password  security:    user:      name: artit      password: password      roles:      - admin,user  
+#security oauth2 config
+security:
+  oauth2:
+    client:
+      client-id: clientId
+      client-secret: clientSecret
+      authorized-grant-types: authorization_code, refresh_token, password, client_credentials
+      scope: read,write,trust      access-token-validity-seconds: 3600 #1 Hr      refresh-token-validity-seconds: 86400 #1 day
